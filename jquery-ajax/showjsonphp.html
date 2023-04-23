@@ -1,0 +1,52 @@
+<html>
+<head>
+    <script src="js/jquery.js"></script>
+</head>    
+<body>
+<table id="data_table" border="1">
+    <thead>
+        <th>Username</th>
+        <th>email</th>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+<div id="d1"></div>
+<script >
+    $().ready(function(){
+        $("#b1").click(function(){
+            $.get("data/users.json",function(data){
+                console.log(data)
+                for(var i=0;i<data.length;i++)
+                {
+                    $("#d1").append(data[i].username+" "+data[i].email+" <br>")
+                }
+            })
+        })
+    })
+// $(document).ready(function() {
+    //  $("#b1").click(function(){
+    //     var url="data/users.json";
+    //     //var url="json.php";
+    //     $("#data_table tbody").html("");
+    //     //$.getJSON(url,(data)=>{	});
+    //     $.getJSON(url,(data)=>{
+    //         console.log(data)
+    //         var content="";
+    //         for(var i=0;i<data.length;i++)
+    //         {
+    //             content+="<tr>";
+    //             content+="<td>"+data[i].username+"</td>";
+    //             content+="<td>"+data[i].email+"</td>";
+    //             content+="</tr>";
+    //         }
+    //         $("#data_table tbody").html(content);
+    //     })
+    //   });
+    // });
+
+    </script>
+    <p style="text-align: justify;"></p>
+    <input type="button" id="b1" name="b1" value="Click" />
+</body></html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Example of jQuery Animation Effects</title>
+<style>
+    .frame{
+        border: 6px solid #000;
+    }
+</style>
+<script src="js/jquery-3.4.1.js"></script>
+<style>
+    img{
+        position: relative; /* Required to move element */
+    }
+    .box{
+        width: 100px;
+        height: 100px;
+        background: #9d7ede;
+        margin-top: 30px;
+        border-style: solid; /* Required to animate border width */
+        border-color: #6f40ce;
+    }
+</style>
+<script>
+$(document).ready(function(){
+    $("#b1").click(function(){
+        //#i1 and .box
+        //$("#i1").animate({height: "200px"}).animate()
+        //$("#i1").animate({height:"300px"}).animate({})
+        $("#i1").animate({height: "300px"})
+            .animate({marginLeft: "150px"})
+            .animate({borderWidth: "10px"})
+            .animate({opacity: 0.5});
+    });  //method /function chaining
+});
+
+$(document).ready(function(){
+    $("#b2").click(function(){
+        //$("#i1").attr({"class":"val"})
+        $("#i1").attr({
+            "class" : "frame",
+            "width" : "200px",
+            "src" : "images/2.JPEG"
+        });
+    });
+});
+</script>
+</head>
+<body>
+    <button type="button" id="b1">Start Animation</button>
+    <button type="button" id="b2">Change Attributes</button>
+
+    <img src="images/1.JPEG" border="1" height="100" width="100" id="i1">
+    <div class="box"></div>
+</body>
+</html>                            

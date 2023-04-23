@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>jQuery Get an Element's Attribute Value</title>
+<script src="js/jquery.js"></script>
+<script>
+$(document).ready(function(){
+    $(".btn-one").click(function(){
+        var str = $("a").attr("href");
+        
+        alert(str);
+        var str1 = $("img#i1").attr("alt");
+        alert(str1);
+    });
+    $(".btn-two").click(function(){
+        $('input[type="checkbox"]').attr("checked", "checked");
+        $("#t1").attr("value","JavaScript");
+    });
+});
+
+</script>
+</head>
+<body>
+    <button type="button" class="btn-one">Get Attribute Value</button>
+    <p><a href="https://www.google.com/">Google</a></p>    
+
+    <img id="i1" src="images/1.JPEG" alt="mscit" height="100" width="100">
+
+    <p><label><input type="checkbox" ></label> I agree with terms and conditions.</p>
+    <input type="text" id="t1">
+    <button type="button" class="btn-two">Check</button>
+</body>
+</html>                            

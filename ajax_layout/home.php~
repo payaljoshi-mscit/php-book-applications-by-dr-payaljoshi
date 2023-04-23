@@ -1,0 +1,9 @@
+<?php
+	$str_homecontents= "HOME PAGE";
+	$fp=fopen("layout.php","r");
+	$str_layout=fread($fp,filesize("layout.php"));
+	$str_op= str_replace("<--CONTENTS-->","$str_homecontents",$str_layout);
+	echo $str_op;
+	fclose($fp);	
+
+?>

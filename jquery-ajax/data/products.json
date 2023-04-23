@@ -1,0 +1,18 @@
+[
+    {
+        "name":"prod1",
+        "price":2000,
+        "quantity":20
+    },
+    {
+        "name":"prod2",
+        "price":3000,
+        "quantity":10
+    },
+    {
+        "name":"prod3",
+        "price":5000,
+        "quantity":25
+    }
+
+]

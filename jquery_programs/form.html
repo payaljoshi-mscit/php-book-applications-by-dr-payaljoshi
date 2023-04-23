@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>jQuery Get a Form Field Value</title>
+<script src="js/jquery.js"></script>
+<script>
+$(document).ready(function(){
+    $("#get-data").click(function(){
+        var name = $("#name").val();
+        var comment = $("#comment").val();
+        var city = $("#city").val();
+
+        alert("<b>"+name+"</b> "+comment+" "+city);
+        $("#div1").html("<b>"+name+"</b> "+comment+" "+city); // Show form data
+        //text(), html(), append() methods can be applied to div and p 
+        $("#div1").append(" "+$("#get-data").text()); //append button caption text
+        $("#div2").html($("#div1").html())//copy div1's content in div2
+    });
+});
+</script>
+</head>
+<body>
+    <h1>Sample Form</h1>
+    <form>
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td>
+                    <input type="text" id="name">
+                </td>
+            </tr>
+            <tr>
+                <td>Comments:</td>
+                <td>
+                    <textarea rows="4" cols="30" id="comment"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>City:</td>
+                <td>
+                    <select id="city">
+                        <option>Surat</option>
+                        <option>Baroda</option>
+                        <option>Mumbai</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <button type="button" id="get-data">Get Data</button>
+    <div id="div1"></div>
+    <div id="div2"></div>
+</body>
+</html>                            

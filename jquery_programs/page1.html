@@ -1,0 +1,38 @@
+<html>
+<head>
+<meta charset="utf-8"/>
+<script src="js/jquery.js" ></script>
+<script language="javascript">
+
+	$().ready(function(){
+		$("#button1").click(function(){
+			$("p").hide();
+		});
+
+	}
+	);
+	
+	jQuery(document).ready(function(){
+		$("#button2").click(function(){
+			$("p").show();
+		});
+	}
+	);	
+	jQuery(document).ready(function(){
+		$("#button3").click(function(){
+			$("p").toggle();
+		});
+	}
+	);
+
+	</script>
+</head>
+<body>
+<p>Hello</p>
+<input type="button" id="button1" value="Hide" >  
+<input type="button" id="button2" value="Show" >
+<input type="button" id="button3" value="Toggle" >
+
+<p>Hello</p>
+</body>
+</html>

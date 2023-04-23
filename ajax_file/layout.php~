@@ -1,0 +1,11 @@
+<html>
+<body>
+<table border=1>
+	<tr>
+		<td><a href="home.php">Home</a><br>
+		<a href="contact.php">Contact</a></td>
+		<td><!--CONTENTS--></td>
+	</tr>
+</table>
+</body>
+</html>

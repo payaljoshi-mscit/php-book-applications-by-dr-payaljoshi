@@ -1,0 +1,52 @@
+<html>
+<head>
+<meta charset="utf-8"/>
+<script src="js/jquery.js" ></script>
+<script language="javascript">
+	$(document).ready(function(){
+		
+		$("#button1").click(
+		function(){
+			//$(selector).load(URL,data,callback); 
+			$("#p1").load("includes/content.html #p1");
+
+			//$("#p1").load("url","name=name1&age20",(responseTxt,statusText,xhr)=>{})
+			//$("#p1").load("includes/content.html", "name=name1", function(responseTxt, statusTxt, xhr){
+			// $("#p1").load("includes/content.html", function(responseTxt, statusTxt, xhr){
+			// 	if(statusTxt == "success")
+			// 		alert("External content loaded successfully!");
+			// 	if(statusTxt == "error")
+			// 		alert("Error: " + xhr.status + ": " + xhr.statusText);
+			// });
+		});
+
+		$("#button2").click(function(){
+		//$.get("msg.php",function(data,status){});
+		
+		$.get("includes/content.html", function(data, status){
+			$("#div1").html("Data: " + data + "\nStatus: " + status);
+			//text,html,append
+		});
+	});
+
+	});
+
+	// $(document).ready(function(){
+	// $("#button2").click(function(){
+	// 	//$.get("msg.php",function(data,status){});
+		
+	// 	$.get("includes/content.html", function(data, status){
+	// 		$("#div1").html("Data: " + data + "\nStatus: " + status);
+	// 		//text,html,append
+	// 	});
+	// });
+	// });
+</script>
+</head>
+<body>
+<p id="p1"></p>
+<input type="button" id="button1" value="Call Ajax!!" >  
+<input type="button" id="button2" value="Call Ajax with Get!!" >  
+<div id="div1"></div>
+</body>
+</html>

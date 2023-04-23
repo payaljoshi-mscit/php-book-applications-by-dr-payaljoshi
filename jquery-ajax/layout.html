@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <script src="js/jquery.js" ></script>
+     </head>
+    <body>
+        <table border="1" width="100%">
+            <tr>
+                <td><div id="header"></div></td>
+            </tr>
+            <tr>
+                <td>Body</td>
+            </tr>
+            <tr>
+                <td><div id="footer"></div></td>
+            </tr>
+        </table>
+        <script>
+            $().ready(()=>{
+                $("#header").load("includes/header.html");
+                $("#footer").load("includes/footer.html");
+            })
+        </script>
+   </body>
+</html>

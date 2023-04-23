@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<title>getJSON</title>
+	</head>
+<body>
+<table class="mGrid" id="data_table" border="1">
+<thead>
+<th>Name</th>
+<th>Price</th>
+<th>Qty</th>
+</thead>
+<tbody></tbody>
+</table>
+<script src="js/jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+ $("#b1").click(function(){
+//	var url="http://localhost:8000/books";
+	var url="data/products.json"
+	//set cors as middleware in express server
+	//use following code
+	//var cors=require("cors");
+	//app.use(cors());
+	$("#data_table tbody").html("");
+	//$.getJSON(url,(data)=>{	});
+	$.getJSON(url,(data)=>{
+		var content="";
+		for(var i=0;i<data.length;i++)
+		{
+			content+="<tr>";
+			content+="<td>"+data[i].name+"</td>";
+			content+="<td>"+data[i].price+"</td>";
+			content+="<td>"+data[i].quantity+"</td>";
+			content+="</tr>";
+		}
+		$("#data_table tbody").html(content);
+
+	})
+	// $.getJSON(url,function(data){
+	// 	$.each(data.users, function(i,user){
+	// 	var newRow =
+	// 	"<tr>"
+	// 	+"<td>"+user.username+"</td>"
+	// 	+"<td>"+user.password+"</td>"
+	// 	+"</tr>" ;
+	// 	$(newRow).appendTo("#jsondata tbody");
+	// 	});
+	// });
+  });
+});
+</script>
+<p style="text-align: justify;"></p>
+<input type="button" id="b1" name="b1" value="Click" />
+
+</body>
+</html>
